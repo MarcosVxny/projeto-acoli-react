@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import User from "../../models/User";
 import { cadastroUsuario } from "../../services/Service";
 import "./CadastroUsuario.css";
+import { toast } from "react-toastify";
 
 function CadastroUsuario() {
   let history = useNavigate();
@@ -46,9 +47,30 @@ function CadastroUsuario() {
     e.preventDefault();
     if (confirmarSenha == user.senha) {
       await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Usuário cadastrado com sucesso");
+      toast.success("Usucario cadastrado com sucesso", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+      });
     } else {
-      alert("Dados inválidos. Favor verificar as informações de cadastro.");
+      toast.error(
+        "Dados inválidos. Favor verificar as informações de cadastro.",
+        {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+          theme: "colored",
+        }
+      );
     }
   }
 
@@ -65,7 +87,7 @@ function CadastroUsuario() {
   </Grid> */}
       <Grid className="container-form-cadastro" item xs={4} alignItems="center">
         <Box>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="form-tema">
             <Typography
               className="titulo-cadastro"
               variant="h3"
@@ -106,6 +128,7 @@ function CadastroUsuario() {
               type="password"
               fullWidth
             />
+
             <TextField
               value={confirmarSenha}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -119,6 +142,7 @@ function CadastroUsuario() {
               type="password"
               fullWidth
             />
+
             <Box marginTop={2} textAlign="center" className="box-bottom">
               <Link to="/login" className="link-login-cadastro">
                 <Button className="btn-cancelar" variant="contained">

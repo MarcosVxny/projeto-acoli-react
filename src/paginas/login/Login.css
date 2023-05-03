@@ -1,51 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
 
-.link-login {
-  text-decoration: none;
-}
-
 .container {
-  background-image: url("./src/assets/background.svg");
-  background-repeat: no-repeat;
   width: 100vh;
-  height: 100vh;
-  min-width: calc(100vh - 60px);
-  background-size: cover;
-  background-position: center;
+  height: calc(100vh - 64px);
 }
 
-.container-form {
-  background: black 0.35;
-  box-shadow: 0 8px 32px 0 rgba(10, 1, 48, 0.37);
-  backdrop-filter: blur(13.5px);
-  -webkit-backdrop-filter: blur(13.5px);
-  border-radius: 20px;
-  color: black;
-  padding: 30px 0;
+.container-form-login {
+  color: rgb(0, 16, 94) !important; 
+  padding: 20px 0;
 }
 
 .titulo-form {
-  color: black;
   font-family: "Poppins", sans-serif !important;
-}
-
-input#usuario,
-input#senha {
-  border-radius: 10px;
-  border: 1px black solid;
 }
 
 label {
-  color: black !important;
+  color: rgb(162, 161, 161) !important;
   font-family: "Poppins", sans-serif !important;
 }
 
-.botao-enviar {
-  background-color: #f7593d !important;
+.btn-logar {
+  margin-top: 20px;
+  color: white !important;
   border: none !important;
   border-radius: 5px !important;
-  color: black !important;
-  font-family: "Poppins", sans-serif !important;
+  background-color: rgb(0, 16, 94) !important;
 }
 
 .botao-enviar:hover {
@@ -62,9 +41,8 @@ label {
   font-family: "Poppins", sans-serif !important;
 }
 
-
 .legenda-cadastrar {
-  color: black;
+  color: rgb(46, 46, 46);
 }
 .legenda-cadastrar:hover {
   color: #f94323;
